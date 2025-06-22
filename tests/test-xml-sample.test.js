@@ -64,7 +64,7 @@ describe("CDP XML Schema Validation", () => {
     xmlExample = fs.readFileSync(xmlExamplePath, "utf8");
   });
 
-  it.only("should validate a correct CDP XML example", async function () {
+  it("should validate a correct CDP XML example", async function () {
   const result = await validator.validateXML(xmlExample, xsdPath);
   assert.strictEqual(result.valid, true, "XML should be valid");
 });
