@@ -17,8 +17,6 @@ async function validateXMLString(xmlString, expectValid = true) {
       assert.strictEqual(result.valid, false, "XML should be invalid");
     }
   } catch (err) {
-    console.dir(err, { depth: null });
-    // console.error("Validation error:", Object.err);
     if (expectValid) {
       throw err; // Unexpected error, fail the test
     } else {
@@ -64,7 +62,7 @@ describe("CDP XML Schema Validation", () => {
     xmlExample = fs.readFileSync(xmlExamplePath, "utf8");
   });
 
-  it.only("should validate a correct CDP XML example", async function () {
+  it("should validate a correct CDP XML example", async function () {
   const result = await validator.validateXML(xmlExample, xsdPath);
   assert.strictEqual(result.valid, true, "XML should be valid");
 });

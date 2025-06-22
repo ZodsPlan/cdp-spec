@@ -50,7 +50,6 @@ describe("CDP Schema Validation", () => {
 
   it("should fail validation with wrong data type", () => {
     const invalidExample = { ...payload, signature: 444 };
-    console.log("Invalid Example:", invalidExample);
     assert.strictEqual(
       validate(invalidExample),
       false,
