@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.org/cdp"
+        xmlns:tns="http://www.example.org/cdp"
+        elementFormDefault="qualified">
+
+  <element name="cdp" type="tns:CDPType"/>
+
+  <complexType name="CDPType">
+    <sequence>
+      <element name="body" type="string"/>
+      <element name="tagline" type="string" minOccurs="0"/>
+      <element name="publicKey" type="string"/>
+      <element name="signature" type="string"/>
+      <element name="hash" type="string" minOccurs="0"/>
+      <element name="version" type="string" fixed="1.0"/>
+    </sequence>
+  </complexType>
+
+</schema>

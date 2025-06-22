@@ -1,0 +1,8 @@
+{
+  "version": "1.0",
+  "body": "My example post here. Human Storm LLC tagline included.",
+  "tagline": "© Human Storm LLC",
+  "signature": "BASE64_SIGNATURE",
+  "publicKey": "BASE64_PUBLIC_KEY",
+  "hash": "SHA256_HASH_OF_MESSAGE_AND_TAGLINE"
+}

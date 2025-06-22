@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Controlled Disclosure Protocol",
+  "description": "Schema for digital attribution and verification.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["body", "publicKey", "signature"],
+  "properties": {
+    "body": {
+      "type": "string",
+      "description": "Original content or message."
+    },
+    "tagline": {
+      "type": "string",
+      "description": "Optional tagline embedded within the content."
+    },
+    "publicKey": {
+      "type": "string",
+      "description": "Base64 or PEM-encoded public key."
+    },
+    "signature": {
+      "type": "string",
+      "description": "Base64 or hex-encoded signature of the content (and tagline)."
+    },
+    "hash": {
+      "type": "string",
+      "description": "Optional hash (e.g., SHA-256) of the content for external verification."
+    },
+    "version": {
+      "type": "string",
+      "enum": ["1.0"],
+      "description": "Schema version."
+    }
+  }
+}

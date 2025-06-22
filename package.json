@@ -1,0 +1,23 @@
+{
+  "name": "cdp-spec",
+  "version": "1.0.0",
+  "description": "Control Disclosure Protocol Specification, Tests, and Tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha \"tests/**/*.test.js\"",
+    "test:watch": "mocha --watch \"tests/**/*.test.js\""
+  },
+  "keywords": [
+    "cdp",
+    "disclosure",
+    "specification",
+    "cli",
+    "nodejs",
+    "integration"
+  ],
+  "author": "Emmanuel Cephas Jr. <contact@humanstorm.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^11.7.0"
+  }
+}

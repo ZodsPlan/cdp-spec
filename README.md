@@ -1,47 +1,25 @@
-# cdp-spec
-Specifications for Controlled Disclosure Protocol
+# CDP Specification
 
-## What is the Control Disclosure Packet (CDP)?
-The CDP is a self-contained, signed data structure that allows any piece of information — text, image, or other media — to be:
+**Controlled Disclosure Protocol (CDP)** is a cryptographic specification for assertion, attribution, and verification of digital content. It allows an author to attach a signature and optional hash to a piece of content (text, media, files) that can be verified by any party, making it ideal for use in:
 
-- Authenticated (you can prove its origin),
+- Digital attribution
+- Anonymous or pseudo-anonymous authorship
+- IP protection and licensing
+- Verification across media and platforms
+- Social and cultural ritualization of trust and verification
 
-- Verified (you can prove it hasn’t been altered), and
+## Status
+Early Draft – Feedback and contributions welcome.
 
-- Disclosed selectively (you can reveal its authorship when required).
+## Directory Layout
+- **drafts/** – The IETF-style draft
+- **specs/** – JSON Schema, XSD Schema
+- **examples/** – Example payloads
+- **CONTRIBUTING.md** – Contributor guidelines
+- **SECURITY.md** – Discusses security and privacy considerations
 
-## How It Works
-1. You create the original content.
+## Usage Example
+Check `examples/sample-cdp.json` for a working example.
 
-2. You attach a tagline (optional).
-
-3. The CDP tool signs the combined content + tagline with your private key.
-
-4. The resulting signature and your public key are added to the CDP.
-
-5. Anyone can verify that the signature came from the matching private key.
-
-## Use Cases
-- Protect digital files (art, music, text).
-
-- Maintain attribution and proof of authorship.
-
-- Enable delayed or conditional disclosure.
-
-- Maintain privacy until you’re ready to reveal authorship.
-
-Output Format
-- Human-readable text.
-
-- Machine-verifiable JSON.
-
-- XML (for enterprise or archival environments).
-
-## Intended Audience
-- Individuals, organizations, and institutions.
-
-- Journalists, researchers, writers, and creators.
-
-- Anyone relying on trusted attribution and verification.
-
-
+## Contributing
+We welcome ideas and improvements. See [CONTRIBUTING.md](CONTRIBUTING.md).
