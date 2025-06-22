@@ -1,20 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://www.example.org/cdp"
-        xmlns:tns="http://www.example.org/cdp"
-        elementFormDefault="qualified">
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="https://example.org/cdp" 
+    xmlns="https://example.org/cdp" 
+    elementFormDefault="qualified">
 
-  <element name="cdp" type="tns:CDPType"/>
+  <xs:simpleType name="nonEmptyString">
+  <xs:restriction base="xs:string">
+    <xs:minLength value="1"/>
+  </xs:restriction>
+</xs:simpleType>
+  <xs:element name="cdp">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="version" type="nonEmptyString"/>
+        <xs:element name="body" type="nonEmptyString"/>
+        <xs:element name="signature" type="nonEmptyString"/>
+        <xs:element name="publicKey" type="nonEmptyString"/>
+        <xs:element name="hash" type="nonEmptyString" minOccurs="0"/>
+        <xs:element name="tagline" type="nonEmptyString" minOccurs="0"/>
+        <xs:element name="date" type="nonEmptyString" minOccurs="0"/>
+        <xs:element name="note" type="nonEmptyString" minOccurs="0"/>
+        <xs:element name="signedBy" type="nonEmptyString" minOccurs="0"/>
+       </xs:all>
 
-  <complexType name="CDPType">
-    <sequence>
-      <element name="body" type="string"/>
-      <element name="tagline" type="string" minOccurs="0"/>
-      <element name="publicKey" type="string"/>
-      <element name="signature" type="string"/>
-      <element name="hash" type="string" minOccurs="0"/>
-      <element name="version" type="string" fixed="1.0"/>
-    </sequence>
-  </complexType>
+      <!-- IMPORTANT:
+           This means NO other elements will be allowed beyond those listed.
+           The schema is "closed".
+      -->
+    </xs:complexType>
+  </xs:element>
 
-</schema>
+</xs:schema>
+
+<!--
+  This schema defines the structure of a CDP (Content Distribution Protocol) XML document.
+  It includes elements for version, body, tagline, signature, public key, and hash.
+  The namespace is set to "https://example.org/cdp".
+  Each element is defined with its type, and the document is structured to ensure that all required
+  elements are present in the correct order.
+  The schema can be used to validate CDP XML documents to ensure they conform to the expected
+  structure and data types.
+  The example provided in the comments illustrates how a valid CDP XML document should look.
+-->
+<!--
+  Note: The "signature", "publicKey", and "hash" elements are expected to
+  contain base64-encoded strings, while the "version", "body", and "tagline"
+  elements are simple strings. The "hash" element should contain a SHA-256 hash
+  of the message body concatenated with the tagline.
+  The "signature" should be a base64-encoded digital signature of the message body
+  using the private key corresponding to the public key provided in the "publicKey" element.
+  The "publicKey" should be a base64-encoded representation of the public key used
+  for signing the message.
+-->

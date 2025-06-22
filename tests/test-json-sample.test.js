@@ -41,7 +41,6 @@ describe("CDP Schema Validation", () => {
     );
     const errors = validate.errors;
     assert(errors, "There should be validation errors");
-    console.log("Validation errors:", errors);
   });
 
   it("should validate the schema itself", () => {
@@ -68,12 +67,12 @@ describe("CDP Schema Validation", () => {
     );
   });
 
-  it("should fail validation with invalid enum value", () => {
+  it('should allow a "version" to be specified', () => {
     const invalidExample = { ...payload, version: "1.4" };
     assert.strictEqual(
       validate(invalidExample),
-      false,
-      "Validation should fail with invalid enum value"
+      true,
+      "Validation should not fail with invalid enum value"
     );
   });
 

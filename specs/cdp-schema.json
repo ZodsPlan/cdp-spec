@@ -28,8 +28,19 @@
     },
     "version": {
       "type": "string",
-      "enum": ["1.0"],
-      "description": "Schema version."
+      "description": "The version of the CDP specification (e.g., '1.0.0')"
+    },
+      "date": {
+      "type": "string",
+      "description": "Optional date for the CDP document (ISO 8601)."
+    },
+    "note": {
+      "type": "string",
+      "description": "Optional note or annotation about this CDP instance."
+    },
+    "signedBy": {
+      "type": "string",
+      "description": "Optional identifier (name, entity) of the signer."
     }
   }
 }

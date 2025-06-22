@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdp xmlns="https://example.org/cdp">
+  <version>1.0</version>
+  <body>My example post here. Human Storm LLC tagline included.</body>
+  <tagline>© Human Storm LLC</tagline>
+  <signature>BASE64_SIGNATURE</signature>
+  <hash>SHA256_HASH_OF_MESSAGE_AND_TAGLINE</hash>
+  <publicKey>BASE64_PUBLIC_KEY</publicKey>
+  <date>2023-10-01</date>
+  <note>This is an example note.</note>
+  <signedBy>Human Storm LLC</signedBy>
+</cdp>
