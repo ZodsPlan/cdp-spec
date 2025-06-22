@@ -1,0 +1,19 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.org/cdp"
+           xmlns="http://example.org/cdp"
+           elementFormDefault="qualified">
+
+  <xs:element name="ControlDisclosurePacket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="tagline" type="xs:string" minOccurs="0" />
+        <xs:element name="signature" type="xs:string" />
+        <xs:element name="publicKey" type="xs:string" />
+        <xs:element name="hashAlgorithm" type="xs:string" />
+        <xs:element name="timestamp" type="xs:dateTime" />
+        <xs:element name="mediaType" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
