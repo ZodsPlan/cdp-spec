@@ -64,10 +64,10 @@ describe("CDP XML Schema Validation", () => {
     xmlExample = fs.readFileSync(xmlExamplePath, "utf8");
   });
 
-  it("should validate a correct CDP XML example", function () {
-    return validateXMLString(xmlExample, true);
-  });
-
+  it.only("should validate a correct CDP XML example", async function () {
+  const result = await validator.validateXML(xmlExample, xsdPath);
+  assert.strictEqual(result.valid, true, "XML should be valid");
+});
   it("should fail validation when required fields are missing", function () {
     const xmlMissingBody = removeElement(xmlExample, "body");
     return validateXMLString(xmlMissingBody, false);
